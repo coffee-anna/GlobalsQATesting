@@ -15,10 +15,10 @@ public class ManagerPage {
     WebElement addCustomerBtn;
 
     @FindBy(xpath = "//button[@ng-class='btnClass2']")
-    WebElement openAccount;
+    WebElement openAccountBtn;
 
     @FindBy(xpath = "//button[@ng-class='btnClass3']")
-    WebElement customers;
+    WebElement customersBtn;
 
     public ManagerPage(WebDriver driver) {
         this.driver = driver;
@@ -33,13 +33,13 @@ public class ManagerPage {
 
     @Step("Redirecting to Open account page")
     public OpenAccountPage goToOpenAccountPage() {
-        openAccount.click();
+        openAccountBtn.click();
         return new OpenAccountPage(driver);
     }
 
     @Step("Redirecting to Customers page")
     public CustomersPage goToCustomersPage() {
-        customers.click();
+        customersBtn.click();
         return new CustomersPage(driver);
     }
 }

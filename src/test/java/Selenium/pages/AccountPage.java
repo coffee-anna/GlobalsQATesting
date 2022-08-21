@@ -36,14 +36,8 @@ public class AccountPage {
 
     @Step("Verifying new user account")
     public void verifyNewUserAccount(int expectedIdx, String expectedCurrency) {
-        System.out.println(expectedIdx+ " "+ expectedCurrency);
         WebElement lastAddedAccount = accountOptions.get(accountOptions.size()-1);
-
-        System.out.println("Last account: " + lastAddedAccount.getText());
-
         int actualIdx = Integer.parseInt(lastAddedAccount.getText());
-
-        System.out.println("Last account id: " + actualIdx);
 
         Assert.assertEquals(actualIdx,
                 expectedIdx, "Unexpected index");

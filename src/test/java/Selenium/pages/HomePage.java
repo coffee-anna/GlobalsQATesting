@@ -31,13 +31,13 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Getting list of available users")
     public List<WebElement> getUsrList() throws Exception {
         // List of available users
         if (usrList.size() > 0) {
             usrList.remove(0);  // Removing blank element
         } else {
-            throw new Exception("Empty list");}
-        System.out.println(usrList);
+            throw new Exception("selenium empty list");}
         return usrList;
     }
 

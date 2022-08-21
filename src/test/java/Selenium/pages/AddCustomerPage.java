@@ -47,7 +47,6 @@ public class AddCustomerPage {
         // Getting alert message
         Alert alert = driver.switchTo().alert();
         alertMessageActual = alert.getText();
-        System.out.println(alertMessageActual);
 
         ValidateNewCustomer(alertMessageActual, alertMessageExpected);
         alert.accept();

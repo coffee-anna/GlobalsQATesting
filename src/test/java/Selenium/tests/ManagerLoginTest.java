@@ -1,8 +1,6 @@
 package Selenium.tests;
 
 import Selenium.pages.*;
-import Selenium.tests.BaseInitializationTest;
-import Selenium.pages.*;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -32,7 +30,6 @@ public class ManagerLoginTest extends BaseInitializationTest {
     public void ManagerLogin() {
         mainPage = new MainPage(driver);
         mainPage.LoginPage(loginType);
-        System.out.println("manager login");
         managerPage = mainPage.goToManagerPage();
     }
 
@@ -73,7 +70,6 @@ public class ManagerLoginTest extends BaseInitializationTest {
         homePage.UserSelectByIndex(homePage.getUsrListSize()-1);
 
         accountPage = homePage.goToAcc();
-        System.out.println("account page");
         accountPage.verifyNewUserAccount(accountId, currencies[0]);
     }
 }
