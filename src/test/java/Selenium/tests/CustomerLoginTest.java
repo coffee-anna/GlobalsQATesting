@@ -1,14 +1,15 @@
-package tests;
+package Selenium.tests;
 
+import Selenium.pages.MainPage;
+import Selenium.tests.BaseInitializationTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AccountPage;
-import pages.HomePage;
-import pages.MainPage;
+import Selenium.pages.AccountPage;
+import Selenium.pages.HomePage;
 
 import java.util.List;
 
@@ -32,9 +33,8 @@ public class CustomerLoginTest extends BaseInitializationTest {
 
         List<WebElement> usrList = homePage.getUsrList();
         for (int i = 1; i<usrList.size(); i++) {   // Parsing list of available users
-            homePage.UserLogin(i);
+            homePage.UserSelectByIndex(i);
             name = usrList.get(i).getText();
-            System.out.println(name);
             accountPage = homePage.goToAcc();
 
             Assert.assertEquals(name,
@@ -43,7 +43,5 @@ public class CustomerLoginTest extends BaseInitializationTest {
 
             accountPage.goToHomePage();
         }
-
     }
-
 }

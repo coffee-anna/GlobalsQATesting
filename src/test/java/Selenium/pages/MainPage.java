@@ -1,12 +1,11 @@
-package pages;
+package Selenium.pages;
 
+import Selenium.tests.BaseInitializationTest;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import tests.BaseInitializationTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,19 +20,20 @@ public class MainPage extends BaseInitializationTest {
         this.driver = driver;
         PageFactory.initElements(driver, this);
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(URL);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Step("Login")
     public void LoginPage(String loginType) {
-        // Login type choice
+        // Login type choice aka Seleniumers
         loginPage = driver.findElement(By.xpath("//*[text()='"+loginType+"']"));
         loginPage.click();
     }
 
     @Step("Redirecting to home page")
-    public HomePage goToHomePage() {
-        return new HomePage(driver);
-    }
+    public HomePage goToHomePage() {return new HomePage(driver);}
+
+    @Step("Redirecting to manager page")
+    public ManagerPage goToManagerPage() {return new ManagerPage(driver);}
 }

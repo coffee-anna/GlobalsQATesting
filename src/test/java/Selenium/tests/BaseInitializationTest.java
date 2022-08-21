@@ -1,4 +1,4 @@
-package tests;
+package Selenium.tests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
