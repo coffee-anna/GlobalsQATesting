@@ -36,10 +36,4 @@ public class ManagerPage {
         openAccountBtn.click();
         return new OpenAccountPage(driver);
     }
-
-    @Step("Redirecting to Customers page")
-    public CustomersPage goToCustomersPage() {
-        customersBtn.click();
-        return new CustomersPage(driver);
-    }
 }
